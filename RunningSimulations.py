@@ -118,10 +118,6 @@ def market_function(risk1, prob1, n1, risk2, prob2, n2, w1, probability, n_of_re
        
     return sim_array
 
-#è bene ricordarsi che si è fissati i valori al tempo 0
-#e poi gli altri valori vanno in range (1,n_of_repetitions), cioè da 1 a n_of_repetitions-1
-
-
 # In[9]:
 
 
@@ -449,7 +445,7 @@ def look_at_linear_simulations(risk1, prob1, n1, risk2, prob2, n2, w1, price, pr
 # In[19]:
 
 
-print("A different function is required for linear agents, because they can acto also as adaptive agents: price must be given")
+print("A different function is required for linear agents, because they can act only as adaptive agents: price must be given")
 print("We'll define a linear market where also linear agents can trade")
 print("The important function is now look_at_linear_simulations. Its arguments are risk1, prob1, n1, risk2, prob2, n2, w1, price, probability, n_of_repetitions, n_of_simulations")
 
