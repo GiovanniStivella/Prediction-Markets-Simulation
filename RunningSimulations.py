@@ -79,7 +79,6 @@ def market_function(risk1, prob1, n1, risk2, prob2, n2, w1, probability, n_of_re
     It returns a list of lists containing the changes in the values as the event gets repeated.
     """
     w2=1-w1
-    s = np.random.choice(2, size=None, replace=True, p=[1-probability, probability])
     
     price = (w1*prob1*risk1+w2*prob2*risk2)/(w1*risk1+w2*risk2)
         
@@ -95,6 +94,7 @@ def market_function(risk1, prob1, n1, risk2, prob2, n2, w1, probability, n_of_re
         alpha2 = choose_agent (risk2, prob2, price, n2)
         
         try:
+            s = np.random.choice(2, size=None, replace=True, p=[1-probability, probability])
             if s==1:
                 w1*=alpha1/price    
                 w2*=alpha2/price
@@ -117,6 +117,10 @@ def market_function(risk1, prob1, n1, risk2, prob2, n2, w1, probability, n_of_re
         price=(w1*prob1*risk1+w2*prob2*risk2)/(w1*risk1+w2*risk2)
        
     return sim_array
+
+#è bene ricordarsi che si è fissati i valori al tempo 0
+#e poi gli altri valori vanno in range (1,n_of_repetitions), cioè da 1 a n_of_repetitions-1
+
 
 # In[9]:
 
@@ -445,13 +449,9 @@ def look_at_linear_simulations(risk1, prob1, n1, risk2, prob2, n2, w1, price, pr
 # In[19]:
 
 
-print("A different function is required for linear agents, because they can act only as adaptive agents: price must be given")
+print("A different function is required for linear agents, because they can acto also as adaptive agents: price must be given")
 print("We'll define a linear market where also linear agents can trade")
 print("The important function is now look_at_linear_simulations. Its arguments are risk1, prob1, n1, risk2, prob2, n2, w1, price, probability, n_of_repetitions, n_of_simulations")
 
 
 # In[ ]:
-
-
-
-
